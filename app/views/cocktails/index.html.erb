@@ -1,3 +1,9 @@
-<% @cocktails.each do |cocktail| %>
-  <h3><%= link_to cocktail.name , cocktail_path(cocktail) %> | <%= link_to 'edit', edit_cocktail_path(cocktail)  %></h3>
+<% if @cocktails %>
+  <% @cocktails.each do |cocktail| %>
+    <h3><%= link_to cocktail.name , cocktail_path(cocktail) %> | <%= link_to 'edit', edit_cocktail_path(cocktail)  %></h3>
+  <% end %>
+  <%= link_to "Add new Cocktail", new_cocktail_path  %>
+<% else %>
+  <%= link_to "Add new Cocktail", new_cocktail_path  %>
 <% end %>
+
