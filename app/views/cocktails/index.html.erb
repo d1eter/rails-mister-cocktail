@@ -1,8 +1,3 @@
 <% @cocktails.each do |cocktail| %>
-  <h3><%= cocktail.name %></h3>
-  <% cocktail.ingredients.each do |ingredient| %>
-    <% cocktail.doses.each do |dose| %>
-      <p><%= ingredient.name %> <%= dose.description %></p>
-    <% end %>
-  <% end %>
+  <h3><%= link_to cocktail.name , cocktail_path(cocktail) %></h3>
 <% end %>
