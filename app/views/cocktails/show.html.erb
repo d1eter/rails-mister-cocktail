@@ -1,4 +1,5 @@
 <h1><%= @cocktail.name %></h1>
+<p><%= link_to 'edit', edit_cocktail_path(@cocktail)  %></p>
 <% @cocktail.ingredients.each do |ingredient| %>
   <% @cocktail.doses.each do |dose| %>
     <p><%= ingredient.name %> <%= dose.description %></p>
