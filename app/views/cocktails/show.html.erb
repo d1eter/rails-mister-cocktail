@@ -3,6 +3,7 @@
     <p><%= dose.ingredient.name %> <%= dose.description %> <%= link_to "🗑", dose_path(dose),
       method: :delete %></p>
 <% end %>
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
 
 
 <%= link_to 'Add ingredient', new_cocktail_dose_path(@cocktail)  %>
