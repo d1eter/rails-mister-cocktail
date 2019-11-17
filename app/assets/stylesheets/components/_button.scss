@@ -1,0 +1,15 @@
+.button-container {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.btn-purple {
+  margin-top: 20px;
+  background-color: #7b00ef;
+  font-weight: 700;
+  color: white;
+}
+.btn-purple:hover {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .2);
+  color: white;
+}

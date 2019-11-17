@@ -1,9 +1,34 @@
-<% if @cocktails %>
-  <% @cocktails.each do |cocktail| %>
-    <h3><%= link_to cocktail.name , cocktail_path(cocktail) %> | <%= link_to 'edit', edit_cocktail_path(cocktail)  %></h3>
+<header class="banner">
+  <div class="banner-content">
+    <h1 class="banner-heading">Mister Cocktail</h1>
+    <p class="banner-paragraph">we think you need a drink</p>
+    <div class="banner-buttons">
+      <%= link_to "Discover our Cocktails", cocktails_path, :class => "btn btn-white" %>
+      <%= link_to "Create a new Cocktail", new_cocktail_path, :class => "btn btn-black" %>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <% if @cocktails %>
+  <div class="cocktaillist">
+      <% @cocktails.each do |cocktail| %>
+        <% if cocktail.photo.present? %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo, height: 200, width: 300, crop: :fill %>')">
+            <%= link_to cocktail.name , cocktail_path(cocktail), :class => "card-text" %>
+          </div>
+        <% else %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+            <%= link_to cocktail.name , cocktail_path(cocktail), :class => "card-text" %>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+</div>
+<div class="button-container">
+  <%= link_to "Add new Cocktail", new_cocktail_path, :class => "btn btn-purple"  %>
+  <% else %>
+    <%= link_to "Add new Cocktail", new_cocktail_path, :class => "btn btn-purple"  %>
   <% end %>
-  <%= link_to "Add new Cocktail", new_cocktail_path  %>
-<% else %>
-  <%= link_to "Add new Cocktail", new_cocktail_path  %>
-<% end %>
+</div>
 

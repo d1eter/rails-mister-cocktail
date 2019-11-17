@@ -1,0 +1,125 @@
+.banner {
+  height: 95vh; /* height of banner will always be 75% of viewport height */
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(230, 250, 246, 0.7),
+    rgba(120, 0, 194, 1)),
+  url('header_background.jpg');
+  background-position: center;
+  background-size: cover;
+  /*specifing a polygon in which the image still be visible
+  starting in top left corner and then moving clockwise:
+  arguments: (x y, x y, x y, x y)*/
+  clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+}
+
+.banner-content {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  /* put the center of the banner-content-box to the center of the header: */
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+}
+.banner-heading {
+  font-family: 'Archivo Black', sans-serif;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 60px;
+  font-weight: 500;
+  letter-spacing: 30px;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+.banner-paragraph {
+  font-family: 'Nunito', sans-serif;
+  color: #FFFFFF;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 12px;
+  margin-bottom: 30px;
+
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.btn-white {
+  background-color: white;
+  font-weight: 700;
+  color: #28303B;
+}
+
+.btn-black {
+  background-color: black;
+  font-weight: 700;
+  color: white;
+}
+.btn-black:hover {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .2);
+  color: white;
+}
+
+.btn-purple {
+  background-color: black;
+  font-weight: 700;
+  color: white;
+}
+.btn-purple:hover {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .2);
+  color: white;
+}
